@@ -1,6 +1,10 @@
 .white-text {
-  color: white;
-  background-color: rgb(166, 166, 199);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 4rem;
+  background-color: #a6a6c7;
   margin: 0;
-  padding: 20px;
+  padding: 2.5rem;
 }
