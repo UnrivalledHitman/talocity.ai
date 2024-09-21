@@ -1,0 +1,143 @@
+.carousel {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  padding: 0 40px;
+}
+
+.carousel-image {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  opacity: 0.8;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 40px 40px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("/src/assets/icons/previous.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("/src/assets/icons/next.png");
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .carousel-inner {
+    padding: 0 20px;
+  }
+
+  .carousel-image {
+    max-width: 120px;
+    padding: 8px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 35px 35px;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-inner {
+    padding: 0 15px;
+  }
+
+  .carousel-image {
+    max-width: 100px;
+    padding: 6px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 30px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    padding: 0 10px;
+  }
+
+  .carousel-image {
+    max-width: 80px;
+    padding: 5px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px;
+    height: 25px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 25px 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-inner {
+    padding: 0 5px;
+  }
+
+  .carousel-image {
+    max-width: 70px;
+    padding: 4px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 20px 20px;
+  }
+}
