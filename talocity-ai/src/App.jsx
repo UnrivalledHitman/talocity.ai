@@ -5,6 +5,7 @@ import OurSolutions from "./components/our-solutions/our-solutions";
 import OurProducts from "./components/our-products/our-products.components";
 import ClientsFeedback from "./components/clients-feedback/clients-feedback.components";
 import CTAButton from "./components/cta-button/cta-button.component";
+import Footer from "./components/footer/footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <OurProducts />
       <ClientsFeedback />
       <CTAButton />
+      <Footer />
     </div>
   );
 };
