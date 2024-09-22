@@ -1,10 +1,36 @@
 import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const TestimonialCard = ({ testimonial, image, name, job, isActive }) => (
+  <div
+    className={`testimonial-card bg-white rounded-lg transition-all duration-500 ease-in-out transform 
+      ${isActive ? "scale-100 opacity-100" : "scale-95 opacity-0"} 
+      w-full max-w-lg mx-auto p-6 space-y-4`}
+    style={{
+      boxShadow:
+        "0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+    }}
+  >
+    <p className="text-gray-700 italic text-sm sm:text-base text-center">
+      {testimonial}
+    </p>
+    <div className="flex flex-col items-center justify-center space-y-2">
+      <img
+        src={image}
+        alt={name}
+        className="w-16 h-16 rounded-full border-2 border-blue-600"
+      />
+      <div className="text-center">
+        <h3 className="font-semibold text-gray-900">{name}</h3>
+        <p className="text-gray-500 text-sm">{job}</p>
+      </div>
+    </div>
+  </div>
+);
 
 const ClientsFeedback = () => {
-  // State to manage the active carousel index
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Array of testimonials and client info for the carousel
   const feedback = [
     {
       testimonial:
@@ -29,50 +55,68 @@ const ClientsFeedback = () => {
     },
   ];
 
-  // Automatically shift the carousel every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % feedback.length);
-    }, 5000); // Shift every 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
-  }, [activeIndex, feedback.length]);
+  }, [feedback.length]);
+
+  const handlePrev = () => {
+    setActiveIndex(
+      (prevIndex) => (prevIndex - 1 + feedback.length) % feedback.length
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % feedback.length);
+  };
 
   return (
-    <div className="bg-gray-100 py-12">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-blue-600 mb-6">
+    <div className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-black mb-6 underline decoration-blue-600 decoration-2">
           Clients Feedback
         </h2>
-        <p className="text-lg mb-10 text-gray-600">
+        <p className="text-lg mb-10 text-gray-600 max-w-2xl mx-auto">
           We have already shaped talent management in many sectors for some of
           the biggest enterprises.
         </p>
-        <div className="carousel flex justify-center items-center">
-          {feedback.map((item, index) => (
+        <div className="relative">
+          <div className="overflow-hidden">
             <div
-              key={index}
-              className={`testimonial-card p-6 mx-4 bg-white shadow-lg rounded-lg transition duration-500 ease-in-out transform ${
-                index === activeIndex
-                  ? "scale-105 opacity-100"
-                  : "scale-100 opacity-50"
-              } hover:scale-105 hover:shadow-xl w-full md:w-1/2 lg:w-1/3`}
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
-              <p className="text-gray-700 italic mb-6">{item.testimonial}</p>
-              <br />
-              <div className="flex items-center justify-center mt-6">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-16 h-16 rounded-full border-2 border-blue-600"
-                />
-                <div className="ml-4 text-left">
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {item.name}
-                  </h3>
-                  <p className="text-gray-500">{item.job}</p>
+              {feedback.map((item, index) => (
+                <div key={index} className="w-full flex-shrink-0">
+                  <TestimonialCard {...item} isActive={index === activeIndex} />
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 focus:outline-none"
+          >
+            <ChevronLeft className="w-6 h-6 text-blue-600" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 focus:outline-none"
+          >
+            <ChevronRight className="w-6 h-6 text-blue-600" />
+          </button>
+        </div>
+        <div className="flex justify-center mt-6 space-x-2">
+          {feedback.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`w-3 h-3 rounded-full ${
+                index === activeIndex ? "bg-blue-600" : "bg-gray-300"
+              }`}
+            />
           ))}
         </div>
       </div>

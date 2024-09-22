@@ -4,6 +4,7 @@ import ClientCarousel from "./components/client-carousel/client-carousel.compone
 import OurSolutions from "./components/our-solutions/our-solutions";
 import OurProducts from "./components/our-products/our-products.components";
 import ClientsFeedback from "./components/clients-feedback/clients-feedback.components";
+import CTAButton from "./components/cta-button/cta-button.component";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <OurSolutions />
       <OurProducts />
       <ClientsFeedback />
+      <CTAButton />
     </div>
   );
 };
