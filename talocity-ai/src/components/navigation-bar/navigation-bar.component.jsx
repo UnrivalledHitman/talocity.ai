@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import logo from "../../assets/navigation-bar/logo_full_horizontal_white.png";
 
 const Navigation = () => {
@@ -12,43 +13,47 @@ const Navigation = () => {
     <nav className="bg-sky-500 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex-shrink-0">
+          {/* Logo that routes to Home */}
+          <Link to="/" className="flex-shrink-0">
             <img src={logo} alt="Logo" className="h-8 w-auto" />
-          </a>
+          </Link>
+
           <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a
-                href="#products"
+              <Link
+                to="/products"
                 className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Products
-              </a>
-              <a
-                href="#clients"
+              </Link>
+              <Link
+                to="/clients"
                 className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Clients
-              </a>
-              <a
-                href="#company"
+              </Link>
+              <Link
+                to="/company"
                 className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Company
-              </a>
-              <a
-                href="#resources"
+              </Link>
+              <Link
+                to="/resources"
                 className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Resources
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              {/* Link to Contact Us page */}
+              <Link
+                to="/contact"
                 className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
+
           <div className="lg:hidden">
             <button
               onClick={toggleMobileMenu}
@@ -95,39 +100,41 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile menu when toggled */}
       {isMobileMenuOpen && (
         <div className="lg:hidden" id="mobile-menu">
           <div className="px-2 py-3 flex flex-col sm:flex-row justify-center items-center overflow-x-auto">
-            <a
-              href="#products"
+            <Link
+              to="/products"
               className="text-white hover:text-gray-200 px-3 py-2 mx-2 rounded-md text-sm font-medium whitespace-nowrap"
             >
               Products
-            </a>
-            <a
-              href="#clients"
+            </Link>
+            <Link
+              to="/clients"
               className="text-white hover:text-gray-200 px-3 py-2 mx-2 rounded-md text-sm font-medium whitespace-nowrap"
             >
               Clients
-            </a>
-            <a
-              href="#company"
+            </Link>
+            <Link
+              to="/company"
               className="text-white hover:text-gray-200 px-3 py-2 mx-2 rounded-md text-sm font-medium whitespace-nowrap"
             >
               Company
-            </a>
-            <a
-              href="#resources"
+            </Link>
+            <Link
+              to="/resources"
               className="text-white hover:text-gray-200 px-3 py-2 mx-2 rounded-md text-sm font-medium whitespace-nowrap"
             >
               Resources
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className="text-white hover:text-gray-200 px-3 py-2 mx-2 rounded-md text-sm font-medium whitespace-nowrap"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       )}
