@@ -21,7 +21,7 @@ const SpeechAnalysis = () => {
         </div>
         <div className="image-wrapper">
           <img
-            src="../../../public/our-solutions/speech-analysis/speech-analysis.png"
+            src="/our-solutions/speech-analysis/speech-analysis.png"
             alt="Speech Analysis"
             className="main-image"
           />

@@ -12,7 +12,7 @@ const content = {
     emotional and language tones such as joy, fear, sadness, anger, analytical,
     confident, and tentative tones.
   `,
-  imageSrc: "../../../public/our-solutions/sentiment-analysis/OIP.jpeg",
+  imageSrc: "/our-solutions/sentiment-analysis/OIP.jpeg",
   altText: "Sentiment Analysis",
 };
 

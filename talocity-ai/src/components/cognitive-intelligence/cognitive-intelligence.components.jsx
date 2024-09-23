@@ -3,17 +3,17 @@ import "./cognitive-intelligence.styles.scss";
 
 const analysisData = [
   {
-    image: "../../../public/our-solutions/cognitive-analysis/eye_analysis.jpg",
+    image: "/our-solutions/cognitive-analysis/eye_analysis.jpg",
     title: "Eyeball Analysis",
     percentage: "94.2%",
   },
   {
-    image: "../../../public/our-solutions/cognitive-analysis/voice.png",
+    image: "/our-solutions/cognitive-analysis/voice.png",
     title: "Speech Analysis",
     percentage: "86.5%",
   },
   {
-    image: "../../../public/our-solutions/cognitive-analysis/words.png",
+    image: "/our-solutions/cognitive-analysis/words.png",
     title: "Choice of Words",
     percentage: "79.7%",
   },

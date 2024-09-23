@@ -19,7 +19,7 @@ const Banner = () => {
       {/* Illustration Container */}
       <div className="z-10 w-full lg:w-1/2 flex justify-center">
         <img
-          src="../../../public/banner/coding-neon-icon-vector.jpg"
+          src="/banner/coding-neon-icon-vector.jpg"
           alt="Illustration"
           className="max-w-full h-auto rounded-lg lg:max-w-[60%]" // Retaining image size adjustment
         />

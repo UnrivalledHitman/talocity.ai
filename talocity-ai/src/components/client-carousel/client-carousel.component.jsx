@@ -9,7 +9,7 @@ const CarouselComponent = () => {
 
   useEffect(() => {
     // Dynamically import all images from the folder
-    const importImages = import.meta.glob("../../../public/client-carousel/*.png");
+    const importImages = import.meta.glob("/client-carousel/*.png");
     const loadImages = async () => {
       const imagePaths = await Promise.all(
         Object.values(importImages).map(async (image) => await image())

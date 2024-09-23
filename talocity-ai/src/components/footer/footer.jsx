@@ -32,7 +32,7 @@ const Footer = () => {
         {/* Company Logo */}
         <div className="flex justify-center mb-10">
           <img
-            src="../../../public/navigation-bar/logo_full_horizontal_white.png"
+            src="/navigation-bar/logo_full_horizontal_white.png"
             alt="company-logo"
             className="h-10 sm:h-12"
           />

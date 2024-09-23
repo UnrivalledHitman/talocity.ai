@@ -37,7 +37,7 @@ const OurProducts = () => {
           <div className="product-card" key={index}>
             <div className="image-wrapper">
               <img
-                src={`../../../public/our-products/${index + 1}.jpg`}
+                src={`/our-products/${index + 1}.jpg`}
                 alt={`Product ${index + 1}`}
               />
             </div>
