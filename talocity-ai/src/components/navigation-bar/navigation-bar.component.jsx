@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import logo from "../../assets/navigation-bar/logo_full_horizontal_white.png";
+import logo from "../../../public/navigation-bar/logo_full_horizontal_white.png";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -3,17 +3,17 @@ import "./cognitive-intelligence.styles.scss";
 
 const analysisData = [
   {
-    image: "/src/assets/our-solutions/cognitive-analysis/eye_analysis.jpg",
+    image: "../../../public/our-solutions/cognitive-analysis/eye_analysis.jpg",
     title: "Eyeball Analysis",
     percentage: "94.2%",
   },
   {
-    image: "/src/assets/our-solutions/cognitive-analysis/voice.png",
+    image: "../../../public/our-solutions/cognitive-analysis/voice.png",
     title: "Speech Analysis",
     percentage: "86.5%",
   },
   {
-    image: "/src/assets/our-solutions/cognitive-analysis/words.png",
+    image: "../../../public/our-solutions/cognitive-analysis/words.png",
     title: "Choice of Words",
     percentage: "79.7%",
   },
@@ -34,7 +34,7 @@ const CognitiveIntelligence = () => {
       <div className="content-container">
         <div className="image-wrapper">
           <img
-            src="/src/assets/our-solutions/cognitive-analysis/cognitive.png"
+            src="../../../public/our-solutions/cognitive-analysis/cognitive.png"
             alt="Cognitive Analysis"
             className="main-image"
           />
