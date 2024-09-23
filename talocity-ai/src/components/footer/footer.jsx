@@ -27,26 +27,31 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-blue-600 text-white py-6 px-4">
-      <div className="max-w-5xl mx-auto flex flex-col min-h-[200px]">
+    <footer className="bg-blue-600 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Company Logo */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-10">
           <img
             src="/src/assets/navigation-bar/logo_full_horizontal_white.png"
             alt="company-logo"
-            className="h-6"
+            className="h-10 sm:h-12"
           />
         </div>
 
         {/* Links Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {/* Product Links */}
-          <div className="text-center">
-            <h3 className="font-semibold mb-2">Products</h3>
-            <ul className="space-y-1">
+          <div>
+            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-blue-500">
+              Products
+            </h3>
+            <ul className="space-y-2">
               {links.product.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="hover:underline">
+                  <a
+                    href={link.href}
+                    className="hover:underline transition-colors duration-200"
+                  >
                     {link.text}
                   </a>
                 </li>
@@ -55,12 +60,17 @@ const Footer = () => {
           </div>
 
           {/* Useful Links */}
-          <div className="text-center">
-            <h3 className="font-semibold mb-2">Useful Links</h3>
-            <ul className="space-y-1">
+          <div>
+            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-blue-500">
+              Useful Links
+            </h3>
+            <ul className="space-y-2">
               {links.useful.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="hover:underline">
+                  <a
+                    href={link.href}
+                    className="hover:underline transition-colors duration-200"
+                  >
                     {link.text}
                   </a>
                 </li>
@@ -69,12 +79,17 @@ const Footer = () => {
           </div>
 
           {/* Contact Us */}
-          <div className="text-center">
-            <h3 className="font-semibold mb-2">Contact Us</h3>
-            <ul className="space-y-1">
+          <div>
+            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-blue-500">
+              Contact Us
+            </h3>
+            <ul className="space-y-2">
               {links.contact.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="hover:underline">
+                  <a
+                    href={link.href}
+                    className="hover:underline transition-colors duration-200"
+                  >
                     {link.text}
                   </a>
                 </li>
@@ -84,10 +99,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright Text */}
-        <div className="mt-auto pt-4 border-t border-blue-500">
-          <p className="text-xs text-center">
-            © 2024 Talocity InstaSolutions Pvt. Ltd.
-          </p>
+        <div className="text-center text-sm">
+          <p>© 2024 Talocity InstaSolutions Pvt. Ltd.</p>
         </div>
       </div>
     </footer>
